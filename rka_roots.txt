@@ -1,0 +1,8 @@
+lingv,йезик
+inter,меж
+facil,лохк
+parol,говор
+permes,разреш
+publik,публик
+naci,наци
+est,ест
