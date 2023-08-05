@@ -1,0 +1,14 @@
+nul,нол
+unu,один
+du,два
+tri,три
+kvar,четире
+kvin,пат
+ses,шест
+sep,сем
+ok,восм
+naŭ,девет
+dek,десат
+cent,сто
+mil,тисач
+miliono,милионо

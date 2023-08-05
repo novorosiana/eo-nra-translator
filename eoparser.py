@@ -56,22 +56,22 @@ def read_as_set(path: str) -> set:
         f = open(path, encoding = "utf-8")
         s = set()
         for word in f:
-                word = word.replace(' ', '').replace('\t', '').replace('\n', '')
+                word = word.replace(' ', '').replace('\t', '').replace('\n', '').split(",")
                 if len(word) == 0 or word[0] == '#':
                         continue
-                s.add(str(word))
+                s.add(str(word[0]))
         f.close()
         return s
 
 class eoparser:
         def __init__(self, **kwargs):
                 value_or = lambda d, v, default: d[v] if v in d else default
-                roots = value_or(kwargs, "roots", lib_dir+"/roots.txt")
-                prefixes = value_or(kwargs, "prefixes", lib_dir+"/prefixes.txt")
-                suffixes = value_or(kwargs, "suffixes", lib_dir+"/suffixes.txt")
-                full_words = value_or(kwargs, "full_words", lib_dir+"/full_words.txt")
-                numbers = value_or(kwargs, "numbers", lib_dir+"/numbers.txt")
-                correlatives = value_or(kwargs, "correlatives", lib_dir+"/correlatives.txt")
+                roots = value_or(kwargs, "roots", lib_dir+"/nra_roots.txt")
+                prefixes = value_or(kwargs, "prefixes", lib_dir+"/nra_prefixes.txt")
+                suffixes = value_or(kwargs, "suffixes", lib_dir+"/nra_suffixes.txt")
+                full_words = value_or(kwargs, "full_words", lib_dir+"/nra_full_words.txt")
+                numbers = value_or(kwargs, "numbers", lib_dir+"/nra_numbers.txt")
+                correlatives = value_or(kwargs, "correlatives", lib_dir+"/nra_correlatives.txt")
                 self.roots = read_as_set(roots) if type(roots) is str else set(roots)
                 self.prefixes = read_as_set(prefixes) if type(prefixes) is str else set(prefixes)
                 self.suffixes = read_as_set(suffixes) if type(suffixes) is str else set(suffixes)
